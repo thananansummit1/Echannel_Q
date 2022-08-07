@@ -5,7 +5,7 @@
         <b-row>
           <b-col xs="12" sm="8" md="6" lg="4" class="mx-auto">
             <div class="text-center mb-5">
-              <h1>E - Channel System</h1>
+              <h1>E-Channel System</h1>
               <h1>(UAT)</h1>
             </div>
             <div class="login">

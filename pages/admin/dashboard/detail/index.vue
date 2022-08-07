@@ -111,6 +111,8 @@
           </b-button>
         </b-col>
       </b-row>
+
+      <pre>{{ filters }}</pre>
     </div>
 
     <div class="box-detail mb-5">
