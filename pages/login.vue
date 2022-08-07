@@ -79,7 +79,6 @@ export default {
     Logo,
   },
   layout(context) {
-    console.log(context)
     return 'landding'
   },
   middleware: 'guest',
