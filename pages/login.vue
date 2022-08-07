@@ -21,7 +21,11 @@
                         ><i class="fas fa-user"></i
                       ></b-input-group-text>
                     </template>
-                    <b-form-input placeholder="Username"></b-form-input>
+                    <b-form-input
+                      v-model="username"
+                      placeholder="Username"
+                      autocomplete="off"
+                    ></b-form-input>
                   </b-input-group>
                 </b-form-group>
 
@@ -33,14 +37,31 @@
                       ></b-input-group-text>
                     </template>
                     <b-form-input
+                      v-model="password"
                       type="password"
                       placeholder="Password"
+                      autocomplete="off"
                     ></b-form-input>
                   </b-input-group>
                 </b-form-group>
 
                 <b-form-group>
-                  <b-button class="w-100" variant="primary">Login</b-button>
+                  <!-- <b-button variant="primary" disabled>
+                    <b-spinner small type="grow"></b-spinner>
+                    Loading...
+                  </b-button> -->
+                  <b-button
+                    v-if="!btnsummit"
+                    :disabled="isDisabledBtn"
+                    class="w-100"
+                    variant="primary"
+                    @click="submmitLoging"
+                    >Login</b-button
+                  >
+                  <b-button disabled class="w-100" variant="primary" v-else>
+                    <b-spinner small type="grow"></b-spinner>
+                    Loading...
+                  </b-button>
                 </b-form-group>
               </div>
             </div>
@@ -63,11 +84,30 @@ export default {
   },
   middleware: 'guest',
   data: function () {
-    return {}
+    return {
+      username: '',
+      password: '',
+      btnsummit: false,
+    }
   },
-  computed: {},
+  computed: {
+    isDisabledBtn() {
+      return this.username === '' || this.password === ''
+    },
+  },
   mounted() {},
-  methods: {},
+  methods: {
+    submmitLoging() {
+      console.log('ready')
+      this.btnsummit = true
+
+      setTimeout(() => {
+        this.$router.push('/admin/dashboard')
+        console.log('ok finish')
+        this.btnsummit = false
+      }, 3000)
+    },
+  },
 }
 </script>
 

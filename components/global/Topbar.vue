@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <b-navbar toggleable="lg" class="navbarv1" type="" variant="primary">
       <b-navbar-brand href="#">E-Channel (UAT)</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
