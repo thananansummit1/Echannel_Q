@@ -1,4 +1,10 @@
 body {
-  background: #f1f1f1;
+  // background: #f1f1f1;
   height: 100vh;
+}
+
+.box-detail {
+  border: 1px solid #eaeaea;
+  padding: 15px;
+  background: var(--bg-white);
 }

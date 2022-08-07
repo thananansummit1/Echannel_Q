@@ -20,7 +20,7 @@
             <template #button-content>
               <em>xxxxx</em>
             </template>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#" @click="logout">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -29,7 +29,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    logout() {
+      this.$bvModal
+        .msgBoxConfirm('Are you sure you want to log out?', {
+          title: 'Warning',
+          centered: true,
+        })
+        .then((value) => {
+          if (value) {
+            this.$store.commit('LOGOUT')
+            this.$router.push('/login')
+          }
+        })
+    },
+  },
+}
 </script>
 
 <style></style>

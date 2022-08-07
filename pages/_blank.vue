@@ -9,7 +9,7 @@ export default {
     Logo,
   },
   layout(context) {
-    return 'landding'
+    return ''
   },
   middleware: '',
   data: function () {

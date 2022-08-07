@@ -13,14 +13,25 @@
                 <Logo />
               </div>
               <div class="text-left">
+                <span></span>
                 <b-form-group>
-                  <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+                  <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
+                    <template #prepend>
+                      <b-input-group-text
+                        ><i class="fas fa-user"></i
+                      ></b-input-group-text>
+                    </template>
                     <b-form-input placeholder="Username"></b-form-input>
                   </b-input-group>
                 </b-form-group>
 
                 <b-form-group>
-                  <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+                  <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
+                    <template #prepend>
+                      <b-input-group-text
+                        ><i class="fas fa-key"></i
+                      ></b-input-group-text>
+                    </template>
                     <b-form-input
                       type="password"
                       placeholder="Password"
@@ -41,12 +52,13 @@
 </template>
 
 <script>
-import Logo from '~/components/NuxtLogo.vue'
+import Logo from '~/components/NuxtLogo'
 export default {
   components: {
     Logo,
   },
   layout(context) {
+    console.log(context)
     return 'landding'
   },
   middleware: 'guest',
@@ -59,7 +71,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .login-page {
   align-items: center;
   display: flex;

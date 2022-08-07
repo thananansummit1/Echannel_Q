@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Task from '~/components/main/tasklist.vue'
+import Task from '~/components/main/Tasklist'
 export default {
   layout(context) {
     return 'admin'

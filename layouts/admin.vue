@@ -1,7 +1,7 @@
 <template>
   <div>
     <Topbar />
-    <b-container class="my-5">
+    <b-container class="my-5" fluid="md">
       <b-row>
         <b-col>
           <nuxt />
